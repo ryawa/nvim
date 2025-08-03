@@ -1,17 +1,17 @@
 -- auto-format on save
-local lsp_fmt_group = vim.api.nvim_create_augroup("LspFormattingGroup", {})
-vim.api.nvim_create_autocmd("BufWritePre", {
-	group = lsp_fmt_group,
-	callback = function()
-		local efm = vim.lsp.get_clients({ name = "efm" })
-
-		if vim.tbl_isempty(efm) then
-			return
-		end
-
-		vim.lsp.buf.format({ name = "efm", async = true })
-	end,
-})
+-- local lsp_fmt_group = vim.api.nvim_create_augroup("LspFormattingGroup", {})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+-- 	group = lsp_fmt_group,
+-- 	callback = function()
+-- 		local efm = vim.lsp.get_clients({ name = "efm" })
+--
+-- 		if vim.tbl_isempty(efm) then
+-- 			return
+-- 		end
+--
+-- 		vim.lsp.buf.format({ name = "efm", async = true })
+-- 	end,
+-- })
 
 vim.api.nvim_create_autocmd("CursorMoved", {
 	group = vim.api.nvim_create_augroup("auto-hlsearch", { clear = true }),
@@ -35,5 +35,24 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	pattern = "*",
 	callback = function()
 		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 500 })
+	end,
+})
+
+-- disable buggy anims in completion windows
+local ui_helpers = vim.api.nvim_create_augroup("UiHelpers", { clear = true })
+
+vim.api.nvim_create_autocmd("User", {
+	group = ui_helpers,
+	pattern = "BlinkCmpMenuOpen",
+	callback = function()
+		vim.g.snacks_animate = false
+	end,
+})
+
+vim.api.nvim_create_autocmd("User", {
+	group = ui_helpers,
+	pattern = "BlinkCmpMenuClose",
+	callback = function()
+		vim.g.snacks_animate = true
 	end,
 })
