@@ -18,7 +18,6 @@ vim.o.relativenumber = true
 vim.o.colorcolumn = "100"
 vim.o.signcolumn = "yes"
 vim.o.scrolloff = 10
-vim.o.completeopt = "menuone,noinsert,noselect"
 vim.o.winborder = "rounded"
 vim.o.cursorline = true
 
