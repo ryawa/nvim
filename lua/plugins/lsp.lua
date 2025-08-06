@@ -1,5 +1,7 @@
 return {
-    { "neovim/nvim-lspconfig", lazy = false,
+    {
+        "neovim/nvim-lspconfig",
+        lazy = false,
         config = function()
             vim.diagnostic.config({
                 virtual_text = true,
@@ -20,6 +22,7 @@ return {
     },
     {
         "mason-org/mason-lspconfig.nvim",
+        version = false,
         lazy = false,
         opts = {},
         dependencies = {

@@ -57,4 +57,5 @@ require("lazy").setup({
 	install = { colorscheme = { "nordfox" } },
 	-- automatically check for plugin updates
 	checker = { enabled = true, notify = false },
+    ui = { border = "rounded" },
 })
