@@ -1,3 +1,7 @@
+-- Workaround to fix visual artifacts in Wezterm multiplexer
+-- Fixed in nightly but too lazy to install
+vim.o.termsync = false
+
 -- Tab / indentation
 vim.o.expandtab = true
 vim.o.tabstop = 4

@@ -28,6 +28,10 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
 	callback = function()
 		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+		vim.api.nvim_set_hl(0, "Pmenu", { bg = "NONE" })
+        -- Force transparency (workaround due to colorscheme)
+		vim.api.nvim_set_hl(0, "BlinkCmpDoc", { link = "NormalFloat" })
+		vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { link = "NormalFloat" })
 	end,
 })
 

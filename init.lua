@@ -1,1 +1,12 @@
-require("config")
+require("config.globals")
+require("config.options")
+require("config.keymaps")
+require("config.autocmds")
+
+require("plugins.colorscheme")
+require("plugins.editor")
+require("plugins.ui")
+require("plugins.treesitter")
+require("plugins.lsp")
+require("plugins.coding")
+require("plugins.completion")
