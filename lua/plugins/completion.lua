@@ -35,7 +35,7 @@ require("blink.cmp").setup({
 	-- C-k: Toggle signature help (if signature.enabled = true)
 	--
 	-- See :h blink-cmp-config-keymap for defining your own keymap
-	keymap = { preset = "default" },
+	keymap = { preset = "super-tab" },
 	appearance = {
 		-- Fix for theme not supporting blink.cmp highlight groups
 		nerd_font_variant = "normal",
