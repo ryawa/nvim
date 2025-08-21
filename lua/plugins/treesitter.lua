@@ -12,6 +12,7 @@ require("nvim-treesitter.configs").setup({
 		"diff",
 		"gitignore",
 		"html",
+		"java",
 		"javascript",
 		"json",
 		"jsonc",

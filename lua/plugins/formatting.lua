@@ -12,6 +12,7 @@ require("conform").setup({
 		typescriptreact = { "prettierd" },
 		html = { "prettierd" },
 		css = { "prettierd" },
+		java = { "checkstyle" },
 	},
 	format_on_save = {
 		-- These options will be passed to conform.format()
