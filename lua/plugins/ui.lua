@@ -80,9 +80,15 @@ require("snacks").setup({
 	picker = {
 		enabled = true,
 		hidden = true,
+		exclude = {
+			"include/fmt",
+			"include/lemlib",
+			"include/liblvgl",
+			"include/pros",
+		},
 	},
 	scope = { enabled = true },
-	scroll = { enabled = true },
+	-- scroll = { enabled = true },
 	statuscolumn = { enabled = true },
 	words = { enabled = true },
 	styles = {

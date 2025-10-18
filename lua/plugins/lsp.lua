@@ -57,7 +57,6 @@ require("mason-lspconfig").setup({
 })
 
 vim.diagnostic.config({
-	virtual_text = true,
 	signs = {
 		text = {
 			[vim.diagnostic.severity.ERROR] = " ",
@@ -67,4 +66,6 @@ vim.diagnostic.config({
 		},
 	},
 })
+vim.o.updatetime = 250
+vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
 vim.lsp.inlay_hint.enable(true)
